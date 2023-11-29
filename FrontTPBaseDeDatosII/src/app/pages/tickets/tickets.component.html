@@ -1,0 +1,56 @@
+<section class="chat-container">
+  <div class="container">
+    <div class="botones-container" style="max-height: 100vh; width: 100%; overflow-y: auto;">
+      <div class="botones" *ngFor="let boton of botones">
+        <h6 class="fondoParaTextos">{{boton.descripcion}}</h6>
+        <button class="btn btn-primary btn-juegos" mat-raised-button color="accent" (click)="traerResultado(boton)">{{boton.operadorUtilizado}}</button>
+      </div>
+    </div>
+    <div class="tabla-container" > 
+      <h2 class="fondoParaTextos" style="margin-bottom: 35px;">RESULTADO DE LA CONSULTA</h2>
+      <p  *ngIf="esGroup" style="font-size: 30px; text-align: center;" class="intentos">
+        La cantidad Total de Beneficios es: {{tickets[0].total}}
+      </p>
+      <div *ngIf="verHoraConMasTrabajo">
+        <p *ngFor="let ticket of tickets"  style="font-size: 30px; text-align: center;" class="intentos">
+           {{ticket._id}} con un total de {{ticket.totalTickets}} tickets
+        </p>
+      </div>
+      <table class="table contenedor-tabla" >
+        <thead>
+          <tr>
+            <th scope="col">Nombre cliente</th>
+            <th scope="col">Tipo de ticket</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Problema</th>
+            <th scope="col">Empleado que genero ticket</th>
+            <th scope="col">Codigo empleado</th>
+            <th *ngIf="verDesperfectoPorZona" scope="col">Localidad</th>
+            <th *ngIf="verDesperfectoPorZona" scope="col">totalDesperfectos</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="tr" *ngFor="let ticket of tickets">
+            <td *ngIf="esProject==false && esGroup==false && verHoraConMasTrabajo==false && verDesperfectoPorZona==false">{{ ticket.clienteInfo.nombre }}</td>
+            <td *ngIf="esProject==false && esGroup==false && verHoraConMasTrabajo==false && verDesperfectoPorZona==false">{{ ticket.detalleTicket.tipoDeTicket }}</td>
+            <td *ngIf="esProject==false && esGroup==false && verHoraConMasTrabajo==false && verDesperfectoPorZona==false">{{ ticket.estado }}</td>
+            <td *ngIf="esProject==false && esGroup==false && verHoraConMasTrabajo==false && verDesperfectoPorZona==false">{{ ticket.detalleTicket.detalleDelProblema.descripcion }}</td>
+            <td *ngIf="esProject==false && esGroup==false && verHoraConMasTrabajo==false && verDesperfectoPorZona==false">{{ ticket.detalleTicket.empleadoResponsableQueAtendioElTicket.nombre }}</td>
+            <td *ngIf="esProject==false && esGroup==false && verHoraConMasTrabajo==false && verDesperfectoPorZona==false">{{ ticket.detalleTicket.empleadoResponsableQueAtendioElTicket.codigoEmpleado }}</td>
+            <td *ngIf="esProject==true">{{ ticket.clienteNombre }}</td>
+            <td *ngIf="esProject==true">{{ ticket.tipoDeTicket }}</td>
+            <td *ngIf="esProject==true">{{ ticket.estado }}</td>
+            <td *ngIf="esProject==true">{{ ticket.descripcionProblema}}</td>
+            <td *ngIf="esProject==true">{{ ticket.codigoEmpleadoResponsable }}</td>
+            <td *ngIf="esProject==true">{{ ticket.nombreEmpleadoResponsable }}</td>
+            <td *ngIf="verDesperfectoPorZona==true">{{ ticket._id.localidad }}</td>
+            <td *ngIf="verDesperfectoPorZona==true">{{ ticket._id.tipoDeTicket }}</td>
+            <td *ngIf="verDesperfectoPorZona==true">{{ ticket.totalDesperfectos }}</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

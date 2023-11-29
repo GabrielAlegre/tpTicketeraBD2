@@ -1,0 +1,128 @@
+.container {
+  display: flex;
+  width: 100%;
+  margin-left: 20px;
+
+}
+
+.chat-container {
+  font-family: "Poppins", sans-serif;
+  background-image: url("../../../assets/fondoChat.gif");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.botones-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.botones {
+  margin-bottom: 5px;
+  padding-top: 5px;
+}
+
+.tabla-container {
+  width: 50%;
+  margin-left: 20px;
+}
+
+.contenedor-tabla {
+  overflow-x: auto;
+  width: 100%;
+  margin-top: 20px;
+  padding-bottom: 0.1rem;
+  background-color: rgba(33, 0, 51, 0.7);
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 0 16px rgb(8, 123, 161);
+}
+
+.tr:hover {
+  background: rgba(105, 3, 97, 0.7);
+  color: rgb(10, 210, 53);
+}
+
+@media screen and (max-width: 480px){
+  .listado-container {
+    font-size: 12px;
+  }
+}
+
+th {
+  text-align: center;
+}
+
+td {
+  text-align: center;
+}
+
+.boton {
+  margin-bottom: 20px;
+}
+
+.btn-juegos {
+  padding: 1.3em 3em;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #000000;
+  padding: 10px 22px;
+  border: rgb(4, 215, 81) 5px solid;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 6px 6px 12px rgb(185, 3, 161);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  display: block;
+}
+
+.btn-juegos:hover {
+  background-color: rgba(131, 3, 87, 0.87);
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  transform: translateY(-7px);
+}
+
+.btn-juegos:active {
+  transform: translateY(-1px);
+}
+
+.fondoParaTextos{
+  width: max-content;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: rgba(72, 236, 51, 0.87);
+  box-shadow: 0px 5px 5px rgb(185, 3, 161);
+  padding: 5px 15px;
+  /* margin-top: 0.1rem; */
+  border-radius: 20px;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+.contenedor-tabla th, .contenedor-tabla td {
+  white-space: nowrap; /* Evita el salto de línea en el contenido de las celdas */
+}
+
+  .intentos {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 2px black;
+    background-color: rgba(44, 8, 61, 0.87);
+    font-weight: bold;
+    width: max-content;
+    border-radius: 20px;
+    padding: 10px 68px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    height: 12rem;
+  }

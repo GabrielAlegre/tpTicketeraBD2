@@ -1,0 +1,1 @@
+const environment = {URI:'mongodb+srv://gabrielalegre68:tpTicketera2023@tpticketera.4pcj7m3.mongodb.net/Ticketera'}

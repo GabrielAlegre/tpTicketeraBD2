@@ -1,0 +1,12 @@
+
+.navclass {
+    font-family: 'Fruinky', sans-serif;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.navdiv {
+    display: flex;
+    justify-content: flex-end;
+}
